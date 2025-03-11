@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Patrimônio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .info-item {
+            margin-bottom: 15px;
+        }
+        .info-item strong {
+            display: inline-block;
+            width: 100px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Informações do Patrimônio</h1>
+        <div class="info-item">
+            <strong>Patrimônio:</strong>
+            <span id="patrimonio"></span>
+        </div>
+        <div class="info-item">
+            <strong>Descrição:</strong>
+            <span id="descricao"></span>
+        </div>
+        <div class="info-item">
+            <strong>Local:</strong>
+            <span id="local"></span>
+        </div>
+        <div class="info-item">
+            <strong>Responsável:</strong>
+            <span id="responsavel"></span>
+        </div>
+    </div>
+
+    <script>
+        // Captura os parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Exibe os dados na página
+        document.getElementById("patrimonio").innerText = urlParams.get("patrimonio") || "N/A";
+        document.getElementById("descricao").innerText = urlParams.get("descricao") || "N/A";
+        document.getElementById("local").innerText = urlParams.get("local") || "N/A";
+        document.getElementById("responsavel").innerText = urlParams.get("responsavel") || "N/A";
+    </script>
+</body>
+</html>

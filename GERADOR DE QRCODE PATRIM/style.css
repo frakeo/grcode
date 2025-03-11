@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Madurai', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #dcd1cd 35%, rgba(0,212,255,1) 100%);
+}
+
+.wrapper {
+    height: auto;  /* Alterado para auto, para ajustar ao conteúdo */
+    min-height: 400px;  /* Garantindo uma altura mínima */
+    background: #fff;
+    max-width: 410px;
+    border-radius: 7px;
+    padding: 20px 25px;  /* Aumentando o padding para um visual mais espaçado */
+    transition: height 0.5s ease;
+}
+
+.wrapper.active {
+    min-height: 530px;  /* Altura mínima quando o QR Code aparece */
+}
+
+header h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 21px;
+}
+
+header p {
+    text-align: center;
+    margin-top: 5px;
+    color: #474747;
+    font-size: 16px;
+}
+
+.wrapper .form {
+    margin: 20px 0 25px;
+}
+
+.wrapper :where(input, button) {
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-bottom: 15px;  /* Adicionando espaço entre os campos */
+}
+
+.form input {
+    font-size: 18px;
+    padding: 0 17px;
+    border: 1px solid #999;
+}
+
+.form button {
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    background: #987a71;
+}
+
+.wrapper .qr-code {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    padding: 33px 0;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #987a71;
+}
+
+.wrapper .img {
+    width: 200px;
+    height: auto;
+}
+
+.wrapper.active .qr-code {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s ease;
+}
