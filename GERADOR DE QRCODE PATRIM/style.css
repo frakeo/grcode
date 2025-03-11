@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;500;600;700&display=swap');
 
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@
     font-family: 'Hind Madurai', sans-serif;
 }
 
+/* Estilos gerais */
 body {
     display: flex;
     justify-content: center;
@@ -16,17 +18,17 @@ body {
 }
 
 .wrapper {
-    height: auto;  /* Alterado para auto, para ajustar ao conteúdo */
-    min-height: 400px;  /* Garantindo uma altura mínima */
+    height: auto;
+    min-height: 400px;
     background: #fff;
     max-width: 410px;
     border-radius: 7px;
-    padding: 20px 25px;  /* Aumentando o padding para um visual mais espaçado */
+    padding: 20px 25px;
     transition: height 0.5s ease;
 }
 
 .wrapper.active {
-    min-height: 530px;  /* Altura mínima quando o QR Code aparece */
+    min-height: 530px;
 }
 
 header h1 {
@@ -52,7 +54,7 @@ header p {
     border: none;
     outline: none;
     border-radius: 5px;
-    margin-bottom: 15px;  /* Adicionando espaço entre os campos */
+    margin-bottom: 15px;
 }
 
 .form input {
