@@ -36,22 +36,17 @@ function removeAccents(str) {
 }
 
 generateBtn.addEventListener("click", () => {
-    // Coleta os valores dos campos
     let patrimonio = removeAccents(patrimonioInput.value),
         descricao = removeAccents(descricaoInput.value),
         local = removeAccents(localInput.value),
         responsavel = removeAccents(responsavelInput.value);
 
-    // Verifica se todos os campos foram preenchidos
     if (!patrimonio || !descricao || !local || !responsavel) return alert("Preencha todos os campos!");
 
-    // Cria o link para a página fake com os dados do patrimônio
     let qrValue = `https://drive.google.com/drive/folders/1ozQtsK2JIDItiCXQtrcDwKOtPEi-VSgI/info.html?patrimonio=${encodeURIComponent(patrimonio)}&descricao=${encodeURIComponent(descricao)}&local=${encodeURIComponent(local)}&responsavel=${encodeURIComponent(responsavel)}`;
 
-    // Altera o texto do botão enquanto o QR Code está sendo gerado
     generateBtn.innerText = "Gerando Qr Code...";
 
-    // Gera o QR Code com o link da página fake
     qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=${encodeURIComponent(qrValue)}&color=1e0ec0`;
 
     qrImg.addEventListener("load", () => {
@@ -61,7 +56,6 @@ generateBtn.addEventListener("click", () => {
         patrimonioLabel.innerText = `Patrimônio: ${patrimonio}`;
         patrimonioLabel.style.display = "block";
 
-        // Limpa os campos após gerar o QR Code
         patrimonioInput.value = "";
         descricaoInput.value = "";
         localInput.value = "";
